@@ -197,9 +197,11 @@ Anotaciones aplicadas:
 | Campos del DTO           | `@Schema`            | `ProductoRequestDTO`, `ProductoResponseDTO` |
 | Parámetros de ruta       | `@Parameter`         | `@PathVariable` en buscar y eliminar        |
 
-**Evidencia — Checkpoint 3:** captura de Swagger UI mostrando endpoints con respuestas documentadas.
+**Evidencia — Checkpoint 3:** capturas de Swagger UI mostrando endpoints con respuestas documentadas.
 
-![Checkpoint 3 — Swagger UI](capturas/checkpoint3-swagger-ui.png)
+![Checkpoint 3 — Swagger UI (vista general de endpoints)](capturas/checkpoint3-swagger-ui.png)
+
+![Checkpoint 3 — Swagger UI (detalle de endpoint con respuestas)](<capturas/checkpoint3-swagger-ui(2).png>)
 
 ---
 
