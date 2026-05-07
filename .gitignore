@@ -1,0 +1,14 @@
+# Maven build output
+target/
+
+# Archivos de log generados en ejecución (evidencia solo en /capturas)
+logs/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
