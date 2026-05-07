@@ -1,0 +1,37 @@
+<configuration>
+
+    <!-- ══════════════════════════════════════════════════════════
+         Appender 1: CONSOLA
+         Formato compacto con timestamp de hora, nivel y logger.
+    ══════════════════════════════════════════════════════════ -->
+    <appender name="CONSOLA" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{HH:mm:ss} %-5level %logger{30} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- ══════════════════════════════════════════════════════════
+         Appender 2: ARCHIVO con rotación diaria
+         Rota cada día y conserva 30 archivos históricos.
+    ══════════════════════════════════════════════════════════ -->
+    <appender name="ARCHIVO" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>logs/catalogo.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>logs/catalogo.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} %-5level %logger - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Nivel DEBUG para el paquete de la aplicación (permite ver log.debug) -->
+    <logger name="com.empresa.catalogo" level="DEBUG"/>
+
+    <!-- Nivel global INFO; envía a ambos appenders -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLA"/>
+        <appender-ref ref="ARCHIVO"/>
+    </root>
+
+</configuration>
